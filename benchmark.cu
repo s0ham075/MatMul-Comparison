@@ -7,15 +7,12 @@
 #include <iomanip>
 #include <omp.h>
 #include <cuda_runtime.h>
-
+#include "cuda_kernels.cuh"
+#include "openmp_kernels.h"
 #define TILE_WIDTH 16
 
-/ Include your implementation files
-#include "cuda_kernels.cuh" // Contains CUDA kernel declarations/definitions
-#include "openmp_kernels.h" // Contains OpenMP function declarations
-
-    // Result structure
-    struct BenchmarkResult
+// Result structure
+struct BenchmarkResult
 {
     std::string method;
     int size;
@@ -347,12 +344,6 @@ int main(int argc, char **argv)
 
     // Matrix sizes to test
     std::vector<int> sizes = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048};
-
-    // If GPU has limited memory, remove larger sizes
-    if (prop.totalGlobalMem < 4ULL * 1024 * 1024 * 1024)
-    {
-        sizes = {128, 256, 512, 1024};
-    }
 
     int n_trials = 10;
     if (argc > 1)

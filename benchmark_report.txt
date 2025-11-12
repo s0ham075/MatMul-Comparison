@@ -1,0 +1,254 @@
+============================================================
+MATRIX MULTIPLICATION BENCHMARK REPORT
+============================================================
+
+SUMMARY STATISTICS
+------------------------------------------------------------
+
+CUDA_Naive:
+  Size 2:
+    Kernel Time: 0.010 ± 0.001 ms
+    Performance: 0.00 ± 0.00 GFLOPS
+    H2D Transfer: 0.018 ms
+    D2H Transfer: 0.014 ms
+    Max Error: 9.54e-08
+  Size 4:
+    Kernel Time: 0.009 ± 0.001 ms
+    Performance: 0.01 ± 0.00 GFLOPS
+    H2D Transfer: 0.020 ms
+    D2H Transfer: 0.014 ms
+    Max Error: 1.60e-07
+  Size 8:
+    Kernel Time: 0.010 ± 0.000 ms
+    Performance: 0.11 ± 0.00 GFLOPS
+    H2D Transfer: 0.019 ms
+    D2H Transfer: 0.014 ms
+    Max Error: 6.50e-07
+  Size 16:
+    Kernel Time: 0.010 ± 0.001 ms
+    Performance: 0.80 ± 0.06 GFLOPS
+    H2D Transfer: 0.019 ms
+    D2H Transfer: 0.014 ms
+    Max Error: 8.41e-06
+  Size 32:
+    Kernel Time: 0.011 ± 0.001 ms
+    Performance: 5.82 ± 0.30 GFLOPS
+    H2D Transfer: 0.021 ms
+    D2H Transfer: 0.015 ms
+    Max Error: 1.50e-05
+  Size 64:
+    Kernel Time: 0.017 ± 0.006 ms
+    Performance: 33.35 ± 7.66 GFLOPS
+    H2D Transfer: 0.034 ms
+    D2H Transfer: 0.019 ms
+    Max Error: 5.07e-04
+  Size 128:
+    Kernel Time: 0.035 ± 0.006 ms
+    Performance: 121.42 ± 16.21 GFLOPS
+    H2D Transfer: 0.078 ms
+    D2H Transfer: 0.035 ms
+    Max Error: 4.07e-03
+  Size 256:
+    Kernel Time: 0.169 ± 0.001 ms
+    Performance: 198.97 ± 0.87 GFLOPS
+    H2D Transfer: 0.166 ms
+    D2H Transfer: 0.098 ms
+    Max Error: 1.04e-02
+  Size 512:
+    Kernel Time: 1.156 ± 0.001 ms
+    Performance: 232.20 ± 0.28 GFLOPS
+    H2D Transfer: 0.583 ms
+    D2H Transfer: 0.350 ms
+    Max Error: 1.13e-02
+  Size 1024:
+    Kernel Time: 9.186 ± 0.003 ms
+    Performance: 233.78 ± 0.06 GFLOPS
+    H2D Transfer: 1.861 ms
+    D2H Transfer: 1.094 ms
+  Size 2048:
+    Kernel Time: 45.459 ± 16.663 ms
+    Performance: 407.92 ± 102.89 GFLOPS
+    H2D Transfer: 7.205 ms
+    D2H Transfer: 3.960 ms
+
+CUDA_Tiled:
+  Size 2:
+    Kernel Time: 0.011 ± 0.001 ms
+    Performance: 0.00 ± 0.00 GFLOPS
+    H2D Transfer: 0.018 ms
+    D2H Transfer: 0.013 ms
+    Max Error: 9.54e-08
+  Size 4:
+    Kernel Time: 0.010 ± 0.001 ms
+    Performance: 0.01 ± 0.00 GFLOPS
+    H2D Transfer: 0.019 ms
+    D2H Transfer: 0.013 ms
+    Max Error: 1.60e-07
+  Size 8:
+    Kernel Time: 0.010 ± 0.001 ms
+    Performance: 0.10 ± 0.01 GFLOPS
+    H2D Transfer: 0.019 ms
+    D2H Transfer: 0.014 ms
+    Max Error: 6.50e-07
+  Size 16:
+    Kernel Time: 0.010 ± 0.001 ms
+    Performance: 0.83 ± 0.05 GFLOPS
+    H2D Transfer: 0.020 ms
+    D2H Transfer: 0.014 ms
+    Max Error: 8.41e-06
+  Size 32:
+    Kernel Time: 0.011 ± 0.001 ms
+    Performance: 5.90 ± 0.34 GFLOPS
+    H2D Transfer: 0.021 ms
+    D2H Transfer: 0.015 ms
+    Max Error: 1.50e-05
+  Size 64:
+    Kernel Time: 0.015 ± 0.001 ms
+    Performance: 35.32 ± 3.16 GFLOPS
+    H2D Transfer: 0.032 ms
+    D2H Transfer: 0.019 ms
+    Max Error: 5.07e-04
+  Size 128:
+    Kernel Time: 0.027 ± 0.000 ms
+    Performance: 154.20 ± 2.41 GFLOPS
+    H2D Transfer: 0.073 ms
+    D2H Transfer: 0.035 ms
+    Max Error: 4.07e-03
+  Size 256:
+    Kernel Time: 0.118 ± 0.000 ms
+    Performance: 285.21 ± 1.06 GFLOPS
+    H2D Transfer: 0.167 ms
+    D2H Transfer: 0.101 ms
+    Max Error: 1.04e-02
+  Size 512:
+    Kernel Time: 0.756 ± 0.001 ms
+    Performance: 355.20 ± 0.24 GFLOPS
+    H2D Transfer: 0.639 ms
+    D2H Transfer: 0.362 ms
+    Max Error: 1.13e-02
+  Size 1024:
+    Kernel Time: 5.810 ± 0.001 ms
+    Performance: 369.63 ± 0.08 GFLOPS
+    H2D Transfer: 1.781 ms
+    D2H Transfer: 1.069 ms
+  Size 2048:
+    Kernel Time: 21.073 ± 1.102 ms
+    Performance: 817.07 ± 43.79 GFLOPS
+    H2D Transfer: 7.239 ms
+    D2H Transfer: 3.937 ms
+
+OpenMP_Naive:
+  Size 2:
+    Kernel Time: 0.001 ± 0.000 ms
+    Performance: 0.03 ± 0.01 GFLOPS
+  Size 4:
+    Kernel Time: 0.001 ± 0.000 ms
+    Performance: 0.18 ± 0.04 GFLOPS
+  Size 8:
+    Kernel Time: 0.001 ± 0.001 ms
+    Performance: 0.93 ± 0.36 GFLOPS
+  Size 16:
+    Kernel Time: 0.003 ± 0.000 ms
+    Performance: 2.49 ± 0.07 GFLOPS
+  Size 32:
+    Kernel Time: 0.022 ± 0.002 ms
+    Performance: 2.94 ± 0.24 GFLOPS
+  Size 64:
+    Kernel Time: 0.166 ± 0.001 ms
+    Performance: 3.15 ± 0.02 GFLOPS
+  Size 128:
+    Kernel Time: 1.396 ± 0.020 ms
+    Performance: 3.01 ± 0.04 GFLOPS
+  Size 256:
+    Kernel Time: 12.740 ± 0.800 ms
+    Performance: 2.64 ± 0.16 GFLOPS
+  Size 512:
+    Kernel Time: 160.773 ± 12.492 ms
+    Performance: 1.68 ± 0.12 GFLOPS
+  Size 1024:
+    Kernel Time: 5307.010 ± 598.591 ms
+    Performance: 0.41 ± 0.05 GFLOPS
+  Size 2048:
+    Kernel Time: 67890.100 ± 124.132 ms
+    Performance: 0.25 ± 0.00 GFLOPS
+
+OpenMP_Tiled:
+  Size 2:
+    Kernel Time: 0.001 ± 0.000 ms
+    Performance: 0.01 ± 0.00 GFLOPS
+  Size 4:
+    Kernel Time: 0.001 ± 0.000 ms
+    Performance: 0.11 ± 0.01 GFLOPS
+  Size 8:
+    Kernel Time: 0.002 ± 0.000 ms
+    Performance: 0.64 ± 0.03 GFLOPS
+  Size 16:
+    Kernel Time: 0.005 ± 0.000 ms
+    Performance: 1.54 ± 0.02 GFLOPS
+  Size 32:
+    Kernel Time: 0.037 ± 0.007 ms
+    Performance: 1.80 ± 0.26 GFLOPS
+  Size 64:
+    Kernel Time: 0.299 ± 0.005 ms
+    Performance: 1.75 ± 0.03 GFLOPS
+  Size 128:
+    Kernel Time: 1.245 ± 0.001 ms
+    Performance: 3.37 ± 0.00 GFLOPS
+    Max Error: 9.01e-04
+  Size 256:
+    Kernel Time: 11.257 ± 0.661 ms
+    Performance: 2.99 ± 0.17 GFLOPS
+    Max Error: 1.78e-02
+  Size 512:
+    Kernel Time: 92.369 ± 1.098 ms
+    Performance: 2.91 ± 0.03 GFLOPS
+    Max Error: 8.80e-02
+  Size 1024:
+    Kernel Time: 1042.274 ± 72.579 ms
+    Performance: 2.07 ± 0.13 GFLOPS
+  Size 2048:
+    Kernel Time: 8859.264 ± 339.760 ms
+    Performance: 1.94 ± 0.08 GFLOPS
+
+============================================================
+SPEEDUP ANALYSIS (relative to OpenMP Naive)
+============================================================
+
+CUDA_Naive:
+  Size 2: 0.07x speedup
+  Size 4: 0.08x speedup
+  Size 8: 0.15x speedup
+  Size 16: 0.32x speedup
+  Size 32: 1.99x speedup
+  Size 64: 9.93x speedup
+  Size 128: 39.71x speedup
+  Size 256: 75.55x speedup
+  Size 512: 139.07x speedup
+  Size 1024: 577.72x speedup
+  Size 2048: 1493.43x speedup
+
+CUDA_Tiled:
+  Size 2: 0.06x speedup
+  Size 4: 0.08x speedup
+  Size 8: 0.15x speedup
+  Size 16: 0.33x speedup
+  Size 32: 2.01x speedup
+  Size 64: 11.13x speedup
+  Size 128: 51.31x speedup
+  Size 256: 108.29x speedup
+  Size 512: 212.74x speedup
+  Size 1024: 913.46x speedup
+  Size 2048: 3221.59x speedup
+
+OpenMP_Tiled:
+  Size 2: 0.66x speedup
+  Size 4: 0.65x speedup
+  Size 8: 0.91x speedup
+  Size 16: 0.62x speedup
+  Size 32: 0.60x speedup
+  Size 64: 0.56x speedup
+  Size 128: 1.12x speedup
+  Size 256: 1.13x speedup
+  Size 512: 1.74x speedup
+  Size 1024: 5.09x speedup
+  Size 2048: 7.66x speedup

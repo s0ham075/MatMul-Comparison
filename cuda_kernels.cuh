@@ -1,7 +1,7 @@
 #include <cuda_runtime.h>
 #define TILE_WIDTH 16
 
-__global__ void matrix_multiplication_kernel(const float *A, const float *B, float *C, int M, int N, int K)
+__global__ void matmul_cuda_naive(const float *A, const float *B, float *C, int M, int N, int K)
 {
     int col = blockDim.x * blockIdx.x + threadIdx.x;
     int row = blockDim.y * blockIdx.y + threadIdx.y;
@@ -17,7 +17,7 @@ __global__ void matrix_multiplication_kernel(const float *A, const float *B, flo
     }
 }
 
-__global__ void matrix_multiplication_kernel(const float *A, const float *B, float *C, int M, int N, int K)
+__global__ void matmul_cuda_tiled(const float *A, const float *B, float *C, int M, int N, int K)
 {
     int col = blockDim.x * blockIdx.x + threadIdx.x;
     int row = blockDim.y * blockIdx.y + threadIdx.y;
